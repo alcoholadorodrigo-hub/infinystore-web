@@ -6,7 +6,7 @@
 
 
 import React, { useState } from 'react';
-import Navbar from './components/Navbar';
+
 import Hero from './components/Hero';
 import ProductGrid from './components/ProductGrid';
 import About from './components/About';
@@ -109,14 +109,7 @@ function App() {
         onClose={() => setToast({ ...toast, visible: false })}
       />
 
-      {view.type !== 'checkout' && (
-        <Navbar 
-            onNavClick={handleNavClick} 
-            cartCount={cartItems.length}
-            onOpenCart={() => setIsCartOpen(true)}
-        />
-      )}
-      
+           
       <main>
         {view.type === 'home' && (
           <>
