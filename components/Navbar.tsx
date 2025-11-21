@@ -14,7 +14,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavClick, cartCount, onOpenCart }) =>
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
 
         {/* LOGO */}
-        <h1 
+        <h1
           className="text-2xl font-extrabold tracking-tight text-black cursor-pointer"
           onClick={(e) => onNavClick(e as any, '')}
         >
@@ -23,27 +23,55 @@ const Navbar: React.FC<NavbarProps> = ({ onNavClick, cartCount, onOpenCart }) =>
 
         {/* LINKS – versión desktop */}
         <div className="hidden md:flex space-x-6">
-          <a href="#home" className="hover:underline cursor-pointer" onClick={(e) => onNavClick(e, '')}>Inicio</a>
-          <a href="#products" className="hover:underline cursor-pointer" onClick={(e) => onNavClick(e, 'products')}>Productos</a>
-          <a href="#about" className="hover:underline cursor-pointer" onClick={(e) => onNavClick(e, 'about')}>Nosotros</a>
-          <a href="#journal" className="hover:underline cursor-pointer" onClick={(e) => onNavClick(e, 'journal')}>Blog</a>
-          <a href="#contact" className="hover:underline cursor-pointer" onClick={(e) => onNavClick(e, 'contact')}>Contacto</a>
+          <a
+            href="#home"
+            className="hover:underline cursor-pointer"
+            onClick={(e) => onNavClick(e, '')}
+          >
+            Inicio
+          </a>
+          <a
+            href="#products"
+            className="hover:underline cursor-pointer"
+            onClick={(e) => onNavClick(e, 'products')}
+          >
+            Productos
+          </a>
+          <a
+            href="#about"
+            className="hover:underline cursor-pointer"
+            onClick={(e) => onNavClick(e, 'about')}
+          >
+            Nosotros
+          </a>
+          <a
+            href="#journal"
+            className="hover:underline cursor-pointer"
+            onClick={(e) => onNavClick(e, 'journal')}
+          >
+            Blog
+          </a>
+          <a
+            href="#contact"
+            className="hover:underline cursor-pointer"
+            onClick={(e) => onNavClick(e, 'contact')}
+          >
+            Contacto
+          </a>
         </div>
 
-        {/* CARRITO icono */}
+        {/* CARRITO – súper visible */}
         <div className="flex items-center">
-          <button className="relative mr-4" onClick={onOpenCart}>
-            <span className="material-icons text-3xl">shopping_cart</span>
-            {cartCount > 0 && (
-              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
-                {cartCount}
-              </span>
-            )}
+          <button
+            onClick={onOpenCart}
+            className="mr-4 px-4 py-2 rounded-full bg-blue-600 text-white font-bold text-sm md:text-base shadow hover:bg-blue-700 transition"
+          >
+            🛒 Carrito ({cartCount})
           </button>
 
           {/* BOTÓN MENÚ MOBILE */}
-          <button 
-            className="md:hidden text-3xl" 
+          <button
+            className="md:hidden text-3xl"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             ☰
@@ -54,11 +82,41 @@ const Navbar: React.FC<NavbarProps> = ({ onNavClick, cartCount, onOpenCart }) =>
       {/* MENÚ MOBILE */}
       {mobileOpen && (
         <div className="md:hidden bg-white shadow-md py-4 space-y-4 px-6">
-          <a href="#home" className="block" onClick={(e) => onNavClick(e, '')}>Inicio</a>
-          <a href="#products" className="block" onClick={(e) => onNavClick(e, 'products')}>Productos</a>
-          <a href="#about" className="block" onClick={(e) => onNavClick(e, 'about')}>Nosotros</a>
-          <a href="#journal" className="block" onClick={(e) => onNavClick(e, 'journal')}>Blog</a>
-          <a href="#contact" className="block" onClick={(e) => onNavClick(e, 'contact')}>Contacto</a>
+          <a
+            href="#home"
+            className="block"
+            onClick={(e) => onNavClick(e, '')}
+          >
+            Inicio
+          </a>
+          <a
+            href="#products"
+            className="block"
+            onClick={(e) => onNavClick(e, 'products')}
+          >
+            Productos
+          </a>
+          <a
+            href="#about"
+            className="block"
+            onClick={(e) => onNavClick(e, 'about')}
+          >
+            Nosotros
+          </a>
+          <a
+            href="#journal"
+            className="block"
+            onClick={(e) => onNavClick(e, 'journal')}
+          >
+            Blog
+          </a>
+          <a
+            href="#contact"
+            className="block"
+            onClick={(e) => onNavClick(e, 'contact')}
+          >
+            Contacto
+          </a>
         </div>
       )}
     </nav>
