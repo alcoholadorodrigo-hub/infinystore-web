@@ -38,6 +38,14 @@ export async function askGemini(prompt: string): Promise<string> {
 }
 
 /**
+ * Compatibilidad con el componente Assistant:
+ * mismo nombre que usabas antes.
+ */
+export async function sendMessageToGemini(message: string): Promise<string> {
+  return await askGemini(message);
+}
+
+/**
  * Ejemplo: obtener sugerencias para la tienda
  */
 export async function getProductSuggestions(text: string): Promise<string> {
